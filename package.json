@@ -4,8 +4,11 @@
   "description": "Nuxt 3 WB website using Chia layer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nuxi dev"
   },
   "author": "Michael Gale",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "nuxt": "^3.1.1"
+  }
 }
