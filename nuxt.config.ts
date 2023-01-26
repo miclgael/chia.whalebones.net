@@ -7,6 +7,8 @@ export default defineNuxtConfig({
     },
   },
 
+  // Use Chia for Nuxt 3
+  // https://github.com/miclgael/chia
   extends: 'github:miclgael/chia',
 
   // Use Volar for TS support
@@ -27,13 +29,13 @@ export default defineNuxtConfig({
 
   // Config for official content module
   // https://content.nuxtjs.org/api/configuration
-  // content: {},
+  content: {},
 
   // Config for official image module
   // https://v1.image.nuxtjs.org/configuration
-  // image: {
-  //   domains: ['whalebones.net']
-  // },
+  image: {
+    domains: ['whalebones.net']
+  },
 
   // Specify if the app contains unit tests
   // Note these are currently not working great in Nuxt 3
@@ -42,5 +44,11 @@ export default defineNuxtConfig({
 
   // Specific Vite config. See Vite docs for more info
   // https://nuxt.com/docs/api/configuration/nuxt-config#vite
-  vite: {}
+  vite: {
+     build: {
+      rollupOptions: {
+        external: ['c-grid-cell']
+      }
+    }
+  }
 })
