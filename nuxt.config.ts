@@ -20,8 +20,8 @@ export default defineNuxtConfig({
   // Use "chia" components as a layer of this project
   // https://nuxt.com/docs/api/configuration/nuxt-config#extends
   // @see https://github.com/nuxt/nuxt/issues/12347 
-  // extends: 'github:miclgael/chia#main',
-  extends: '../chia', // <- temporary `generate` workaround
+  extends: 'github:miclgael/chia#main',
+  // extends: '../chia', // <- temporary `generate` workaround
 
   // Use Volar for TS support
   // https://nuxt.com/docs/api/configuration/nuxt-config#tsconfig
