@@ -1,3 +1,7 @@
+<script setup>
+const tracks = []
+</script>
+
 <template>
  <aside>
     <details>
@@ -14,10 +18,3 @@
     </details>
   </aside>
 </template>
-
-<script setup>
-const story = useStory()
-
-// get the tracks from the story
-const tracks = story.value.tracks
-</script>

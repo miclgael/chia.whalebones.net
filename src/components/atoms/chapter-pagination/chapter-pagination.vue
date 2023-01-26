@@ -1,3 +1,7 @@
+<script setup>
+const route = useRoute()
+</script>
+
 <template>
   <nav for="pagination">
     <ul id="pagination" role="list">
@@ -18,18 +22,3 @@
     </ul>
   </nav>
 </template>
-
-<script setup>
-const story = useStory()
-const route = useRoute()
-
-// Get the chapter ID from the route
-const slug = route.params.slug
-
-// get the tracks from the story
-const tracks = story.value.tracks
-
-// pluck the chapter info from the story
-const prev = story.value.getPreviousTrackBySlug(tracks, slug)
-const next = story.value.getNextTrackBySlug(tracks, slug)
-</script>
