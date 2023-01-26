@@ -15,7 +15,7 @@ const appConfig = useAppConfig()
         <slot />
       </c-section>
       <c-section element="footer" class="footer">
-        <p><a href="https://www.michaelgale.dev/">{{ appConfig.siteAuthor }}</a> &copy; 1987 - {{ appConfig.siteYear }}</p>
+        <p><nuxt-link href="https://www.michaelgale.dev/">{{ appConfig.siteAuthor }}</nuxt-link> &copy; 1987 - {{ (new Date).getFullYear() }}</p>
       </c-section>
     </c-section>
   </c-section>
