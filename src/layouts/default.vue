@@ -6,12 +6,15 @@ const appConfig = useAppConfig()
 <template>
   <c-section class="app-background" :is-container="false">
     <c-section class="app-background-inside" :background="'rgba(0,0,0,0.6)'">
+      <div class="skip-link">
+        <a href="#main">Skip to main content</a>
+      </div>
       <c-section element="header">
         <div class="center">
           <h1 class="sr-only" id="site-title">{{ appConfig.siteName }}</h1>
         </div>
       </c-section>
-      <c-section element="main" :is-container="false">
+      <c-section element="main" id="main" :is-container="false">
         <slot />
       </c-section>
       <c-section element="footer" class="footer">
@@ -95,5 +98,24 @@ body {
 .slide-fade-leave-to {
   transform: translateX(20px);
   opacity: 0;
+}
+
+.skip-link {
+  text-align: center;
+  height: 0;
+}
+.skip-link a {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+ 
+.skip-link a:focus {
+  position: static;
+  width: auto;
+  height: auto;
 }
 </style>
