@@ -31,7 +31,7 @@ export default defineAppConfig({
     {
       text: "Soundcloud",
       icon: "soundcloud",
-      href: "https: //soundcloud.com/whalebonesss"
+      href: "https://soundcloud.com/whalebonesss"
     },
     {
       text: "Apple Music",
