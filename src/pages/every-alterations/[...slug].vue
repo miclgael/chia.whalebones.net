@@ -1,7 +1,6 @@
 <template>
   <c-section>
     <h1 v-if="title">Track {{ id }}: <em>{{ title }}</em></h1>
-    <!-- <nuxt-img v-if="image" :src="image" /> -->
     <content-doc :path="`/tracks/${slug}`"/>
     <atoms-spotify-embed v-if="embed" :src="embed" />
   </c-section>
