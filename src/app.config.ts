@@ -1,6 +1,7 @@
-export default defineAppConfig({ 
+export default defineAppConfig({
   siteName: "Whalebones",
   siteTagline: "Official website of the Australian musician, poet, writer and artist.",
+  siteYear: (new Date).getFullYear(),
   siteAuthor: "Michael Gale",
   socialMedia: [
     {

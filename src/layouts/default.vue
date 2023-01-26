@@ -1,28 +1,21 @@
-<script setup>
-// Stylesheet overrides
+<script setup lang="ts">
 import '@/assets/pico.config.css'
-
-// Copyright year
-const year = (new Date).getFullYear()
-
-// Query nuxt content for site config
-// const { data } = useAsyncData('config', () => queryContent('/config').findOne())
 const appConfig = useAppConfig()
 </script>
 
 <template>
   <c-section class="app-background" :is-container="false">
     <c-section class="app-background-inside" :background="'rgba(0,0,0,0.6)'">
-      <c-section element="header" :background="null">
+      <c-section element="header">
         <div class="center">
           <h1 class="sr-only" id="site-title">{{ appConfig.siteName }}</h1>
         </div>
       </c-section>
-      <c-section element="main" :is-container="false" :background="null">
+      <c-section element="main" :is-container="false">
         <slot />
       </c-section>
-      <c-section element="footer" :background="null" class="footer">
-        <p><a href="https://www.michaelgale.dev/">{{ appConfig.siteAuthor }}</a> &copy; 1987 - {{ year }}</p>
+      <c-section element="footer" class="footer">
+        <p><a href="https://www.michaelgale.dev/">{{ appConfig.siteAuthor }}</a> &copy; 1987 - {{ appConfig.siteYear }}</p>
       </c-section>
     </c-section>
   </c-section>

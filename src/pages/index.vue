@@ -13,7 +13,7 @@ useHead({
 <template>
   <div class="main-content">
     <nuxt-img src="/logo-white-stacked.svg" alt="" width="1000" aria-labelledby="site-title" />
-    <h3>{{ appConfig }} Debut album <br />"Every Alterations" <br />out now</h3>
+    <h3>Debut album <br />"Every Alterations" <br />out now</h3>
     <atoms-social-links />
   </div>
 </template>
