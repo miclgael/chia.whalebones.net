@@ -2,19 +2,18 @@
 // Stylesheet overrides
 import '@/assets/pico.config.css'
 
-// Query nuxt content for site config
-const { data } = useAsyncData('config', () => queryContent('/config').findOne())
+const appConfig = useAppConfig()
 
 useHead({
-  title: data.value.siteName + ' - ' + data.value.siteTagline,
-  description: data.value.siteTagline,
+  title: appConfig.siteName + ' - ' + appConfig.siteTagline,
+  description: appConfig.siteTagline,
 })
 </script>
 
 <template>
   <div class="main-content">
     <nuxt-img src="/logo-white-stacked.svg" alt="" width="1000" aria-labelledby="site-title" />
-    <h3>Debut album <br />"Every Alterations" <br />out now</h3>
+    <h3>{{ appConfig }} Debut album <br />"Every Alterations" <br />out now</h3>
     <atoms-social-links />
   </div>
 </template>

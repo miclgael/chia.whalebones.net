@@ -6,18 +6,19 @@ export default defineNuxtConfig({
       mode: 'out-in'
     },
   },
+  // Move @ directory to src/
+  // https://nuxt.com/docs/api/configuration/nuxt-config#srcdir
+  srcDir: 'src/',
 
-  // Use Chia for Nuxt 3
-  // https://github.com/miclgael/chia
-  extends: 'github:miclgael/chia',
+  // Use "chia" components as a layer of this project
+  // https://nuxt.com/docs/api/configuration/nuxt-config#extends
+  // @see https://github.com/nuxt/nuxt/issues/12347 
+  // extends: 'github:miclgael/chia#main',
+  extends: '../chia', // <- temporary `generate` workaround
 
   // Use Volar for TS support
   // https://nuxt.com/docs/api/configuration/nuxt-config#tsconfig
   typescript: { shim: false },
-
-  // Move @ directory to src/
-  // https://nuxt.com/docs/api/configuration/nuxt-config#srcdir
-  srcDir: 'src/',
 
   // Configure PicoCSS
   // https://nuxt.com/docs/api/configuration/nuxt-config#css 
@@ -44,11 +45,11 @@ export default defineNuxtConfig({
 
   // Specific Vite config. See Vite docs for more info
   // https://nuxt.com/docs/api/configuration/nuxt-config#vite
-  vite: {
-     build: {
-      rollupOptions: {
-        external: ['c-grid-cell']
-      }
-    }
-  }
+  vite: {},
+
+  experimental: {
+    payloadExtraction: false
+  },
+
+  ignore: ['**/*.config.{js,ts,json}']
 })

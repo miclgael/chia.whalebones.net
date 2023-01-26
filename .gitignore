@@ -3,5 +3,8 @@ node_modules
 .output
 .build
 .cache
+.playground
+dist
+
 .DS_Store
 .env
