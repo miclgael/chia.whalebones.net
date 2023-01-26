@@ -5,7 +5,14 @@ export default defineNuxtConfig({
       name: 'slide-fade',
       mode: 'out-in'
     },
+    head: {
+      bodyAttrs: {
+        'data-theme': 'dark'
+      }
+    }
   },
+
+
   // Move @ directory to src/
   // https://nuxt.com/docs/api/configuration/nuxt-config#srcdir
   srcDir: 'src/',

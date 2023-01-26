@@ -80,7 +80,7 @@ body {
   text-align: center;
 }
 .footer * {
-  color: rgba(206, 206, 206, 0.8) !important;
+  color: var(--color);
 }
 
 .slide-fade-enter-active {

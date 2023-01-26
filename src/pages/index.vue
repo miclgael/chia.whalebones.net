@@ -28,8 +28,8 @@ useHead({
   width: 100%;
   padding: 0 1rem;
 }
-.main-content * {
-  color: white !important;
-  font-weight: 300 !important;
+.main-content h3 {
+  color: var(--contrast);
+  font-weight: 300;
 }
 </style>
