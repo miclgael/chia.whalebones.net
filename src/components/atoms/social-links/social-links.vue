@@ -1,3 +1,8 @@
+<script setup>
+const appConfig = useAppConfig()
+const links = appConfig.socialMedia
+</script>
+
 <template>
   <nav id="social-links" aria-label="Social media links">
     <ul role="list">
@@ -48,11 +53,6 @@
   </teleport>
 </template>
 
-<script setup>
-const { data } = await useAsyncData('config', () => queryContent('/config').findOne())
-const links = data.value.socialMedia
-</script>
-
 <style scoped>
 .icon {
   display: inline-block;
@@ -64,5 +64,4 @@ const links = data.value.socialMedia
   font-size: 24px;
   color: #fff;
 }
-
 </style>
