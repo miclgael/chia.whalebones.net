@@ -54,6 +54,9 @@ const links = appConfig.socialMedia
 </template>
 
 <style scoped>
+nav {
+  margin-top: 2rem;
+}
 .icon {
   display: inline-block;
   width: 1em;

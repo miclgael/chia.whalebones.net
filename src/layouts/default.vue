@@ -50,7 +50,7 @@ body {
   text-align: center;
 }
 .app-background {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background-color: black;
   background-image: url('/every-alterations-web-medium.jpg');
