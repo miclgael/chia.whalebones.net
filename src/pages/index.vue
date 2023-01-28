@@ -1,12 +1,12 @@
-<script setup>
+<script setup lang="ts">
 // Stylesheet overrides
 import '@/assets/pico.config.css'
 
-const appConfig = useAppConfig()
+const appConfig:AppConfig = useAppConfig()
 
 useHead({
   title: appConfig.siteName + ' - ' + appConfig.siteTagline,
-  description: appConfig.siteTagline,
+  meta: [{ name: 'description', content: appConfig.siteTagline }]
 })
 </script>
 

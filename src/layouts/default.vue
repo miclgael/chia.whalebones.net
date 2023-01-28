@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import '@/assets/pico.config.css'
-const appConfig = useAppConfig()
+const appConfig:AppConfig = useAppConfig()
 </script>
 
 <template>

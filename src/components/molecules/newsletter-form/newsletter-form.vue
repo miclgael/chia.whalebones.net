@@ -1,9 +1,9 @@
-<script setup>
+<script setup lang="ts">
 const props = defineProps({
   theme: {
     type: String,
     default: 'primary',
-    validator: (value) => ['primary', 'secondary', 'outline'].includes(value)
+    validator: (value:string) => ['primary', 'secondary', ].includes(value)
   }
 })
 
@@ -13,11 +13,11 @@ const email = ref('');
 // Status info
 const submitted = ref(false)
 const submitting = ref(false)
-const hasError = ref(null)
-const statusMsg = ref(null)
+const hasError = ref(false)
+const statusMsg = ref('')
 
 // Change state based on server response
-const handleServerResponse = (ok, msg) => {
+const handleServerResponse = (ok:boolean, msg:string) => {
   if (ok) {
     email.value = ''
     submitted.value = true
@@ -31,16 +31,16 @@ const handleServerResponse = (ok, msg) => {
 }
 
 // Handle form input
-const handleOnChange = (e) => {
+const handleOnChange = (e:{target:any}) => {
   email.value = e.target.value
   submitted.value = false
   submitting.value = false
   hasError.value = false
-  statusMsg.value = null
+  statusMsg.value = ''
 }
 
 // Handle form submit
-const handleOnSubmit = (e) => {
+const handleOnSubmit = () => {
     submitting.value = true
 
     // Send data to Formspree server

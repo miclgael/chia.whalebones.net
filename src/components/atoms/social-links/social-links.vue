@@ -1,5 +1,5 @@
-<script setup>
-const appConfig = useAppConfig()
+<script setup lang="ts">
+const appConfig:AppConfig = useAppConfig()
 const links = appConfig.socialMedia
 </script>
 
