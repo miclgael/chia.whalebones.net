@@ -1,9 +1,9 @@
 <template>
   <component
-  :is="buttonType($props)"
-  v-bind="linkProps($props)"
-  :class="[$props.color, $props.variant]"
-  :role="buttonType($props) !== 'a' ? 'button' : null"
+    :is="buttonType($props)"
+    v-bind="linkProps($props)"
+    :class="[$props.color, $props.variant]"
+    :role="buttonType($props) !== 'a' ? 'button' : null"
   >
     <slot />
   </component>
@@ -66,13 +66,10 @@ const { isExternal, isNuxtLink } = getLinkType(props)
 
 const buttonType = () => {
   if (isExternal) {
-    console.log('isExternal');
     return 'a'
   } else if (isNuxtLink) {
-    console.log('isNuxtLink');
     return 'nuxt-link'
   } else {
-    console.log('neither');
     return 'button'
   }
 }
