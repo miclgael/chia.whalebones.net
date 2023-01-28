@@ -12,8 +12,8 @@ useHead({
 
 <template>
   <div class="main-content">
-    <nuxt-img src="/logo-white-stacked.svg" alt="" width="800" aria-labelledby="site-title" loading="lazy"  />
-    <div>
+    <nuxt-img src="/logo-white-stacked.svg" alt="" width="800" aria-labelledby="site-title" loading="lazy" />
+    <c-section :is-container="false">
       <h2 class="vertical-spacer">Debut album "Every Alterations" out now</h2>
       <c-grid class="grid--cta">
         <c-grid-cell>
@@ -67,7 +67,7 @@ useHead({
           </div>
         </c-grid-cell>
       </c-grid>
-    </div>
+    </c-section>
 
     <!-- <blockquote class="testimonial">
       <p>It appears atonal and naive on the surface but comes from a place of strong competence.</p>

@@ -1,27 +1,16 @@
 <script setup lang="ts">
 import '@/assets/pico.config.css'
 const appConfig = useAppConfig()
-const route = useRoute()
 </script>
 
 <template>
   <c-section class="app-background" :is-container="false">
-    <c-section class="app-background-inside" :background="'rgba(0,0,0,0.6)'">
-      <div class="skip-link">
-        <a href="#main">Skip to main content</a>
-      </div>
-      <c-section element="header">
-        <div class="center">
-          <h1 class="sr-only" id="site-title">{{ appConfig.siteName }}</h1>
-        </div>
-      </c-section>
+    <c-section class="app-background-inside" :background="'rgba(0,0,0,0.6)'" :is-container="false">
+      <organisms-app-header />
       <c-section element="main" id="main" :is-container="false">
         <slot />
       </c-section>
-      <c-section :is-container="false" class="center vertical-spacer">
-        <molecules-newsletter-form :theme="route.path === '/' ? 'secondary': 'primary'" />
-        <atoms-social-links />
-      </c-section>
+      <organisms-app-cta />
       <c-section element="footer" class="footer">
         <p><nuxt-link href="https://www.michaelgale.dev/">{{ appConfig.siteAuthor }}</nuxt-link> &copy; 1987 - {{ (new Date).getFullYear() }}</p>
       </c-section>
