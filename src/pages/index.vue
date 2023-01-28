@@ -12,31 +12,59 @@ useHead({
 
 <template>
   <div class="main-content">
-    <nuxt-img src="/logo-white-stacked.svg" alt="" width="800" aria-labelledby="site-title" />
-    
+    <nuxt-img src="/logo-white-stacked.svg" alt="" width="800" aria-labelledby="site-title" loading="lazy"  />
     <div>
       <h2 class="vertical-spacer">Debut album "Every Alterations" out now</h2>
       <c-grid class="grid--cta">
         <c-grid-cell>
-          <nuxt-img src="/every-alterations-web-medium.jpg" />
+          <nuxt-img src="/every-alterations-web-medium.jpg" alt="The artwork of the Every Alterations LP - featuring a big distorted face" width="250" height="250" loading="lazy" />
         </c-grid-cell>
         <c-grid-cell>
-          <p class="blurb">The debut album from Whalebones. Take a dip into the warm depths of emotion: 14 tracks of ambient and introspective music.</p>
+          <p class="blurb">
+            The debut album from <em>Whalebones</em>, featuring 14 original tracks. Take a dip in the warm waters of introspective and emotive <abbr title="Intelligent Dance Music">IDM</abbr> from the Australian musician.
+          </p>
           <c-grid class="grid--buttons">
             <atoms-c-button role="button" to="https://open.spotify.com/album/60PRgolOzB6xfanO6RWugr?si=TGbtuxxeSm-4xjwlaNGtMQ">
-              Stream now on Spotify
+              Stream <span class="desktop-only"> now </span>on Spotify
             </atoms-c-button>
             <atoms-c-button role="button" class="secondary" to="https://music.apple.com/au/artist/whalebones/279869764">
-              Apple
+              Apple<span class="desktop-only"> Music</span>
             </atoms-c-button>
           </c-grid>
-          <p class="blurb blurb--plus">
-            <small>
-              Also available on: <atoms-c-button class="secondary" to="https://soundcloud.com/whalebonesss/sets/every-alterations">
-                Soundcloud</atoms-c-button>, <atoms-c-button class="secondary" to="https://music.youtube.com/playlist?list=OLAK5uy_kiSCsu1sVhbEE-zUOs9hjv_-VyCE06wZ0">
-                  YouTube Music</atoms-c-button>
-            </small>
-            </p>
+          <div class="blurb blurb--plus">
+            <details>
+              <summary>
+                Also available on these platforms
+              </summary>
+              <ul role="list">
+                <li role="listitem">
+                  <atoms-c-button to="https://soundcloud.com/whalebonesss/sets/every-alterations">
+                    Soundcloud
+                  </atoms-c-button>
+                </li>
+                <li role="listitem">
+                  <atoms-c-button  to="https://music.youtube.com/playlist?list=OLAK5uy_kiSCsu1sVhbEE-zUOs9hjv_-VyCE06wZ0">
+                    YouTube Music
+                  </atoms-c-button>
+                </li>
+                <li role="listitem">
+                  <atoms-c-button to="https://www.deezer.com/album/372405187">
+                    Deezer
+                  </atoms-c-button>
+                </li>
+                <li role="listitem">
+                  <atoms-c-button to="https://tidal.com/browse/album/258271612">
+                    Tidal
+                  </atoms-c-button>
+                </li>
+                <li role="listitem">
+                  <atoms-c-button to="https://www.amazon.com/dp/B0BLCNTPYC/">
+                    Amazon Music
+                  </atoms-c-button>
+                </li>
+              </ul>
+            </details>
+          </div>
         </c-grid-cell>
       </c-grid>
     </div>
@@ -52,7 +80,7 @@ useHead({
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .main-content {
   display: grid;
   justify-items: center;
@@ -60,20 +88,32 @@ useHead({
   text-align: center;
   height: 100%;
   width: 100%;
-  padding: 0 1rem;
   grid-gap: 5rem;
+  @media screen and (min-width: 768px) {
+      padding: 0 1rem;
+  }
 }
 .main-content h2 {
   color: var(--contrast);
   font-weight: 300;
 }
 
-@media screen and (min-width: 768px) {
 .grid--cta {
+  @media screen and (min-width: 768px) {
     grid-template-columns: 250px 1fr;
   }
-  .grid--buttons {
-    grid-template-columns: auto 1fr;
+}
+.grid--buttons {
+  grid-template-columns: 2fr auto;
+  grid-gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  // @media screen and (min-width: 768px) {
+  //   grid-template-columns: auto 1fr;
+  // }
+
+  a {
+    width: 100%;
   }
 }
 .blurb {
@@ -82,6 +122,16 @@ useHead({
 }
 .blurb--plus {
   margin-top: 1rem;
+  p {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.desktop-only {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: inline;
+  }
 }
 
 </style>

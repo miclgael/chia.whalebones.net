@@ -52,7 +52,7 @@ const props = defineProps({
 })
 </script>
 
-<style module scoped>
+<style lang="scss" module scoped>
 section {
   margin-bottom: 0;
 }
@@ -65,7 +65,11 @@ section {
   position: relative;
   max-width: 94rem;
   margin: 0 auto;
-  padding: 2rem 3rem;
+  padding: 1rem 2rem;
+
+  @media screen and (min-width: 768px) {
+    padding: 2rem 3rem;
+  }
 }
 
 .section__background {

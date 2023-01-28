@@ -33,4 +33,5 @@
   --blockquote-border-color: var(--muted-border-color);
   --blockquote-footer-color: var(--muted-color);
   color-scheme: dark;
+  --accordion-border-color: rgba(0, 0, 0, 0);
 }
