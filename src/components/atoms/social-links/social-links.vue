@@ -56,6 +56,7 @@ const links = appConfig.socialMedia
 <style scoped>
 nav {
   margin-top: 2rem;
+  justify-content: space-around;
 }
 .icon {
   display: inline-block;

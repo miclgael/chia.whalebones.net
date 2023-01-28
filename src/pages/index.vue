@@ -74,9 +74,6 @@ useHead({
       <p>Slow, thoughtful, ambient wanderings mashed with a wonderful spontaneous oddness. Young and naive, packed with atonal abandon and honesty.</p>
       <cite>- Jon L</cite>
     </blockquote> -->
-
-    <molecules-newsletter-form class="vertical-spacer" />
-    <atoms-social-links />
   </div>
 </template>
 

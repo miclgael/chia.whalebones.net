@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import '@/assets/pico.config.css'
 const appConfig = useAppConfig()
+const route = useRoute()
 </script>
 
 <template>
@@ -16,6 +17,10 @@ const appConfig = useAppConfig()
       </c-section>
       <c-section element="main" id="main" :is-container="false">
         <slot />
+      </c-section>
+      <c-section :is-container="false" class="center vertical-spacer">
+        <molecules-newsletter-form :theme="route.path === '/' ? 'secondary': 'primary'" />
+        <atoms-social-links />
       </c-section>
       <c-section element="footer" class="footer">
         <p><nuxt-link href="https://www.michaelgale.dev/">{{ appConfig.siteAuthor }}</nuxt-link> &copy; 1987 - {{ (new Date).getFullYear() }}</p>
@@ -117,5 +122,9 @@ body {
   position: static;
   width: auto;
   height: auto;
+}
+
+.vertical-spacer {
+  margin-top: 5rem;
 }
 </style>

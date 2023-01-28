@@ -1,4 +1,12 @@
 <script setup>
+const props = defineProps({
+  theme: {
+    type: String,
+    default: 'primary',
+    validator: (value) => ['primary', 'secondary'].includes(value)
+  }
+})
+
 // User email
 const email = ref('');
 
@@ -68,12 +76,12 @@ const handleOnSubmit = (e) => {
       />
       <atoms-c-button 
         type="submit" 
-        class="secondary"
+        :class="theme"
         :disabled="submitting"
         >
         {{ !submitting
             ? !submitted
-              ? 'Submit'
+              ? 'Subscribe'
               : 'Submitted'
             : 'Submitting...' }}
       </atoms-c-button>
