@@ -7,7 +7,7 @@ const appConfig = useAppConfig()
   <c-section class="app-background" :is-container="false">
     <c-section class="app-background-inside" :background="'rgba(0,0,0,0.6)'" :is-container="false">
       <organisms-app-header />
-      <c-section element="main" id="main" :is-container="false">
+      <c-section element="main" id="main">
         <slot />
       </c-section>
       <organisms-app-cta />
