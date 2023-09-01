@@ -24,11 +24,11 @@ useHead({
             The debut album from <em>Whalebones</em>, featuring 14 original tracks. Take a dip in the warm waters of introspective and emotive <abbr title="Intelligent Dance Music">IDM</abbr> from the Australian musician.
           </p>
           <c-grid class="grid--buttons">
-            <atoms-c-button role="button" to="https://open.spotify.com/album/60PRgolOzB6xfanO6RWugr?si=TGbtuxxeSm-4xjwlaNGtMQ">
-              Stream <span class="desktop-only"> now </span>on Spotify
+            <atoms-c-button role="button" to="https://whalebones.bandcamp.com/album/every-alterations">
+              Stream <span class="desktop-only"> now </span>on Bandcamp
             </atoms-c-button>
-            <atoms-c-button role="button" class="secondary" to="https://music.apple.com/au/artist/whalebones/279869764">
-              Apple<span class="desktop-only"> Music</span>
+            <atoms-c-button role="button" class="secondary" to="https://open.spotify.com/album/60PRgolOzB6xfanO6RWugr?si=TGbtuxxeSm-4xjwlaNGtMQ">
+              <span class="desktop-only">Stream now on </span>Spotify
             </atoms-c-button>
           </c-grid>
           <div class="blurb blurb--plus">
@@ -37,6 +37,11 @@ useHead({
                 Also available on these platforms
               </summary>
               <ul role="list">
+                <li role="listitem">
+                  <atoms-c-button to="https://music.apple.com/au/artist/whalebones/279869764">
+                    Apple<span class="desktop-only"> Music</span>
+                  </atoms-c-button>
+                </li>
                 <li role="listitem">
                   <atoms-c-button to="https://soundcloud.com/whalebonesss/sets/every-alterations">
                     Soundcloud
