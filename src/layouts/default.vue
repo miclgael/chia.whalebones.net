@@ -50,7 +50,7 @@ body {
   background-image: url('/every-alterations-web-medium.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: center;
   background-attachment: fixed;
 }
 
@@ -62,7 +62,6 @@ body {
 @media screen and (min-width: 768px) {
   .app-background {
     background-image: url('/every-alterations-web-large.jpg');
-    background-position: center;
   }
 }
 .app-background-inside {
@@ -113,7 +112,15 @@ body {
   height: auto;
 }
 
-.vertical-spacer {
-  margin-top: 5rem;
+
+@media screen and (min-width: 520px) {
+  .vertical-spacer {
+    margin-top: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .vertical-spacer {
+    margin-top: 5rem;
+  }
 }
 </style>

@@ -24,11 +24,14 @@ useHead({
             The debut album from <em>Whalebones</em>, featuring 14 original tracks. Take a dip in the warm waters of introspective and emotive <abbr title="Intelligent Dance Music">IDM</abbr> from the Australian musician.
           </p>
           <c-grid class="grid--buttons">
-            <atoms-c-button role="button" to="https://open.spotify.com/album/60PRgolOzB6xfanO6RWugr?si=TGbtuxxeSm-4xjwlaNGtMQ">
-              Stream <span class="desktop-only"> now </span>on Spotify
+            <atoms-c-button role="button" to="https://whalebones.bandcamp.com/album/every-alterations">
+              <span class="desktop-only">Listen now on </span>Bandcamp
+            </atoms-c-button>
+            <atoms-c-button role="button" class="secondary" to="https://open.spotify.com/album/60PRgolOzB6xfanO6RWugr?si=TGbtuxxeSm-4xjwlaNGtMQ">
+              Spotify
             </atoms-c-button>
             <atoms-c-button role="button" class="secondary" to="https://music.apple.com/au/artist/whalebones/279869764">
-              Apple<span class="desktop-only"> Music</span>
+              Apple
             </atoms-c-button>
           </c-grid>
           <div class="blurb blurb--plus">
@@ -101,13 +104,10 @@ useHead({
   }
 }
 .grid--buttons {
-  grid-template-columns: 2fr auto;
+  grid-template-columns: 2fr auto auto;
   grid-gap: 0.5rem;
   justify-content: space-between;
   align-items: center;
-  // @media screen and (min-width: 768px) {
-  //   grid-template-columns: auto 1fr;
-  // }
 
   a {
     width: 100%;

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const appConfig:AppConfig = useAppConfig()
-const links = appConfig.socialMedia
+// drop any social media link with a key of website
+const links = appConfig.socialMedia?.filter(link => link.icon !== 'website')
 </script>
 
 <template>
