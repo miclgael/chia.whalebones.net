@@ -1,23 +1,23 @@
-<script setup>
+<script setup lang="ts">
 // Stylesheet overrides
 import '@/assets/pico.config.css'
 
-const appConfig = useAppConfig()
+const appConfig:AppConfig = useAppConfig()
 
 useHead({
   title: appConfig.siteName + ' - ' + appConfig.siteTagline,
-  description: appConfig.siteTagline,
+  meta: [{ name: 'description', content: appConfig.siteTagline }]
 })
 </script>
 
 <template>
   <div class="main-content">
-    <nuxt-img src="/logo-white-stacked.svg" alt="" width="800" aria-labelledby="site-title" loading="lazy" />
+    <img src="/logo-white-stacked.svg" alt="" width="800" aria-labelledby="site-title" loading="lazy" />
     <c-section :is-container="false">
       <h2 class="vertical-spacer">Debut album "Every Alterations" out now</h2>
       <c-grid class="grid--cta">
         <c-grid-cell>
-          <nuxt-img src="/every-alterations-web-medium.jpg" alt="The artwork of the Every Alterations LP - featuring a big distorted face" width="250" height="250" loading="lazy" />
+          <img src="/every-alterations-web-medium.jpg" alt="The artwork of the Every Alterations LP - featuring a big distorted face" width="250" height="250" loading="lazy" />
         </c-grid-cell>
         <c-grid-cell>
           <p class="blurb">
@@ -25,10 +25,13 @@ useHead({
           </p>
           <c-grid class="grid--buttons">
             <atoms-c-button role="button" to="https://whalebones.bandcamp.com/album/every-alterations">
-              Stream <span class="desktop-only"> now </span>on Bandcamp
+              <span class="desktop-only">Listen now on </span>Bandcamp
             </atoms-c-button>
             <atoms-c-button role="button" class="secondary" to="https://open.spotify.com/album/60PRgolOzB6xfanO6RWugr?si=TGbtuxxeSm-4xjwlaNGtMQ">
-              <span class="desktop-only">Stream now on </span>Spotify
+              Spotify
+            </atoms-c-button>
+            <atoms-c-button role="button" class="secondary" to="https://music.apple.com/au/artist/whalebones/279869764">
+              Apple
             </atoms-c-button>
           </c-grid>
           <div class="blurb blurb--plus">
@@ -37,11 +40,6 @@ useHead({
                 Also available on these platforms
               </summary>
               <ul role="list">
-                <li role="listitem">
-                  <atoms-c-button to="https://music.apple.com/au/artist/whalebones/279869764">
-                    Apple<span class="desktop-only"> Music</span>
-                  </atoms-c-button>
-                </li>
                 <li role="listitem">
                   <atoms-c-button to="https://soundcloud.com/whalebonesss/sets/every-alterations">
                     Soundcloud
@@ -106,13 +104,10 @@ useHead({
   }
 }
 .grid--buttons {
-  grid-template-columns: 2fr auto;
+  grid-template-columns: 2fr auto auto;
   grid-gap: 0.5rem;
   justify-content: space-between;
   align-items: center;
-  // @media screen and (min-width: 768px) {
-  //   grid-template-columns: auto 1fr;
-  // }
 
   a {
     width: 100%;

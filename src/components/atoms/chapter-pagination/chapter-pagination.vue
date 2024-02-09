@@ -1,5 +1,7 @@
-<script setup>
+<script setup lang="ts">
 const route = useRoute()
+const prev = ref({title: '', slug: ''})
+const next = ref({title: '', slug: ''})
 </script>
 
 <template>
