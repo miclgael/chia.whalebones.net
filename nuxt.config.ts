@@ -1,7 +1,7 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   app: {
-    pageTransition: { 
+    pageTransition: {
       name: 'slide-fade',
       mode: 'out-in'
     },
@@ -20,8 +20,9 @@ export default defineNuxtConfig({
   // Use "chia" components as a layer of this project
   // https://nuxt.com/docs/api/configuration/nuxt-config#extends
   // @see https://github.com/nuxt/nuxt/issues/12347 
-  extends: 'github:miclgael/chia#main',
+  // extends: 'github:miclgael/chia#main',
   // extends: '../chia', // <- temporary `generate` workaround
+  extends: 'tmp/chia-core_v0-0-1', // <- temporary `generate` workaround
 
   // Use Volar for TS support
   // https://nuxt.com/docs/api/configuration/nuxt-config#tsconfig

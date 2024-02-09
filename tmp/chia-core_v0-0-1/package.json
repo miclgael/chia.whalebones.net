@@ -1,0 +1,7 @@
+{
+  "name": "chia-nuxt-3-layer",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@picocss/pico": "^1.5.7"
+  }
+}
