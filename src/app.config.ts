@@ -4,11 +4,6 @@ export default defineAppConfig({
   siteAuthor: "Michael Gale",
   socialMedia: [
     {
-      text: "Instagram",
-      icon: "instagram",
-      href: "https://www.instagram.com/whalebonesss"
-    },
-    {
       text: "Facebook",
       icon: "facebook",
       href: "https://www.facebook.com/whalebonesss"
