@@ -12,12 +12,12 @@ useHead({
 
 <template>
   <div class="main-content">
-    <nuxt-img src="/logo-white-stacked.svg" alt="" width="800" aria-labelledby="site-title" loading="lazy" />
+    <img src="/logo-white-stacked.svg" alt="" width="800" aria-labelledby="site-title" loading="lazy" />
     <c-section :is-container="false">
       <h2 class="vertical-spacer">Debut album "Every Alterations" out now</h2>
       <c-grid class="grid--cta">
         <c-grid-cell>
-          <nuxt-img src="/every-alterations-web-medium.jpg" alt="The artwork of the Every Alterations LP - featuring a big distorted face" width="250" height="250" loading="lazy" />
+          <img src="/every-alterations-web-medium.jpg" alt="The artwork of the Every Alterations LP - featuring a big distorted face" width="250" height="250" loading="lazy" />
         </c-grid-cell>
         <c-grid-cell>
           <p class="blurb">
