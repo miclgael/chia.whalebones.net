@@ -11,80 +11,51 @@ const props = defineProps({
 const email = ref('');
 
 // Status info
-const submitted = ref(false)
 const submitting = ref(false)
 const hasError = ref(false)
 const statusMsg = ref('')
-
-// Change state based on server response
-const handleServerResponse = (ok:boolean, msg:string) => {
-  if (ok) {
-    email.value = ''
-    submitted.value = true
-    submitting.value = false
-    hasError.value = false
-    statusMsg.value = msg
-  } else {
-    hasError.value = true
-    statusMsg.value = msg
-  }
-}
-
-// Handle form input
-const handleOnChange = (e:{target:any}) => {
-  email.value = e.target.value
-  submitted.value = false
-  submitting.value = false
-  hasError.value = false
-  statusMsg.value = ''
-}
-
-// Handle form submit
-const handleOnSubmit = () => {
-    submitting.value = true
-
-    // Send data to Formspree server
-    useFetch('https://formspree.io/f/mlekgjdk', {
-      method: 'POST',
-      body: { email: email.value }
-    })
-      .then((response) => {
-        handleServerResponse(true, 'Thank you, you\'re all signed-up!')
-      })
-      .catch((error) => {
-        handleServerResponse(false, error?.response?.data?.error);
-      });
-  };
-
 </script>
 
 <template>
   <c-section :is-container="false">
     <h3>Sign up for the newsletter</h3>
     <p>For updates on new releases, live streams, and performances.</p>
-    <form @submit.prevent="handleOnSubmit">
-      <label for="email">Your email address</label>
+    <form  action="https://dev.us9.list-manage.com/subscribe/post" method="POST">
+      <input type="hidden" name="u" value="257a1e0bac87544e5ef92cb4d">
+      <input type="hidden" name="id" value="178070e696">
+
+      <!-- people should not fill these in and expect good things -->
+      <div class="field-shift" aria-label="Please leave the following three fields empty" aria-hidden="true">
+        <label for="b_name">Name: </label>
+        <input type="text" name="b_name" tabindex="-1" value="" placeholder="Freddie" id="b_name">
+
+        <label for="b_email">Email: </label>
+        <input type="email" name="b_email" tabindex="-1" value="" placeholder="youremail@gmail.com" id="b_email">
+
+        <label for="b_comment">Comment: </label>
+        <textarea name="b_comment" tabindex="-1" placeholder="Please comment" id="b_comment"></textarea>
+      </div>
+      <label for="MERGE0">Your email address</label>
       <input 
         type="email"
-        name="email"
+        name="MERGE0"
         placeholder="example@example.com"
-        id="email"
+        id="MERGE0"
         required
+        size="25"
+        autocapitalize="none"
+        autocorrect="off"
         :value="email"
-        :disabled="submitting"
-        @change="handleOnChange"
       />
       <atoms-c-button 
-        type="submit" 
+        type="submit"
+        name="submit"
         :class="theme"
-        :disabled="submitting"
         >
-        {{ !submitting
-            ? !submitted
-              ? 'Subscribe'
-              : 'Submitted'
-            : 'Submitting...' }}
+        Subscribe
       </atoms-c-button>
+      <input type="hidden" name="ht" value="0499fc9703a59a43dd4a6eed43a71658b464064d:MTcwNzYyMjY3OS40NjQ5">
+      <input type="hidden" name="mc_signupsource" value="hosted">
     </form>
     
     <p v-if="hasError" class="error">Error: {{ statusMsg }}</p>
@@ -105,6 +76,17 @@ input,
 [type="submit"],
 form {
   max-width: 99%;
+}
+
+.field-shift {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 </style>
