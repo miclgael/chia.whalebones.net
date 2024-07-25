@@ -47,7 +47,7 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: black;
-  background-image: url('/every-alterations-web-medium.jpg');
+  background-image: url('/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -58,12 +58,7 @@ body {
   height: 100%;
   display: grid;
 }
-/* Use large image on larger devices */
-@media screen and (min-width: 768px) {
-  .app-background {
-    background-image: url('/every-alterations-web-large.jpg');
-  }
-}
+
 .app-background-inside {
   min-height: 100vh;
 }
