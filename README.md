@@ -1,5 +1,9 @@
 # Whalebones website
 
+> [!CAUTION]
+> **Archived**<br>
+> This repo is archived, no longer maintained and may soon be deleted.
+
 Home page for the [Whalebones](https://whalebones.net) project.
 
 ## Setup
